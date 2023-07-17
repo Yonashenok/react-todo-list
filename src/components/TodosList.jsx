@@ -1,5 +1,5 @@
 import TodoItem from './TodoItem';
-import SetList from './Hook/SetList';
+import SetList from '../hooks/SetList';
 /* eslint-disable react/prop-types */
 
 const TodosList = ({ items, onDeleteItem, onEditItem, onChecked }) => {

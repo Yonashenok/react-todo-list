@@ -2,12 +2,13 @@ import { useState } from 'react';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
 import classes from './TodoLogic.module.css';
-import GetList from './Hook/GetList';
+import GetList from '../hooks/GetList';
 
 const TodosLogic = () => {
   const [todo, setTodo] = useState(GetList());
 
   const handleAddListItem = (item) => {
+    if (!item.title) return;
     setTodo((cur) => [...cur, item]);
   };
 
