@@ -1,7 +1,7 @@
 import TrashIcon from '../assets/TrashIcon';
 import EditIcon from '../assets/EditIcon';
 import classes from './TodoItem.module.css';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 /* eslint-disable react/prop-types */
 
 const TodoItem = ({ todo, onDeleteItem, onEditItem, onChecked }) => {
@@ -46,7 +46,6 @@ const TodoItem = ({ todo, onDeleteItem, onEditItem, onChecked }) => {
       </div>
       <input
         type="text"
-        ref={refEdit}
         className={classes.textInput}
         value={todo.title}
         style={editMode}
