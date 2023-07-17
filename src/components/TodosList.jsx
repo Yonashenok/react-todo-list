@@ -2,7 +2,7 @@ import TodoItem from './TodoItem';
 import SetList from './Hook/SetList';
 /* eslint-disable react/prop-types */
 
-const TodosList = ({ items, onDeleteItem, onEditItem }) => {
+const TodosList = ({ items, onDeleteItem, onEditItem, onChecked }) => {
   SetList(items);
   return (
     <ul>
@@ -12,6 +12,7 @@ const TodosList = ({ items, onDeleteItem, onEditItem }) => {
           key={todo.id}
           onDeleteItem={onDeleteItem}
           onEditItem={onEditItem}
+          onChecked={onChecked}
         />
       ))}
     </ul>

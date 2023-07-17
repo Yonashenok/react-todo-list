@@ -7,7 +7,7 @@ import GetList from './Hook/GetList';
 const TodosLogic = () => {
   const [todo, setTodo] = useState(GetList());
 
-  const handleList = (item) => {
+  const handleAddListItem = (item) => {
     setTodo((cur) => [...cur, item]);
   };
 
@@ -21,13 +21,22 @@ const TodosLogic = () => {
     );
   };
 
+  const handleCheckBox = (id) => {
+    setTodo((cur) =>
+      cur.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  };
+
   return (
     <div className={classes.listContainer}>
-      <InputTodo onAddList={handleList} />
+      <InputTodo onAddList={handleAddListItem} />
       <TodosList
         items={todo}
         onDeleteItem={handleDeleteItem}
         onEditItem={handleEditItem}
+        onChecked={handleCheckBox}
       />
     </div>
   );
