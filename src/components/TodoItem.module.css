@@ -24,3 +24,12 @@
   border: 1px solid #dfdfdf;
   outline: none;
 }
+
+.complete {
+  text-decoration: line-through;
+  border: none;
+  width: 50rem;
+  height: 3rem;
+  font-size: 1.8em;
+  text-align: left;
+}

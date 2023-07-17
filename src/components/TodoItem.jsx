@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 const TodoItem = ({ todo, onDeleteItem, onEditItem }) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [isComplete, setIsComplete] = useState(false);
 
   let viewMode = {};
   let editMode = {};
@@ -28,16 +29,24 @@ const TodoItem = ({ todo, onDeleteItem, onEditItem }) => {
     }
   };
 
+  const handleCheckBox = () => {
+    setIsComplete((cur) => !cur);
+  };
+
   return (
     <li className={classes.listItem}>
       <input
         type="checkbox"
         name="checkbox"
         className={classes.checkbox}
+        onClick={handleCheckBox}
         style={viewMode}
       />
 
-      <div className={classes.text} style={viewMode}>
+      <div
+        className={isComplete ? classes.complete : classes.text}
+        style={viewMode}
+      >
         {todo.title}
       </div>
       <input
