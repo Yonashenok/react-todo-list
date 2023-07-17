@@ -1,0 +1,26 @@
+.listItem {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.checkbox {
+  width: 3rem;
+}
+
+.text {
+  border: none;
+  width: 50rem;
+  height: 3rem;
+  font-size: 1.8em;
+  text-align: left;
+}
+
+.textInput {
+  width: 58rem;
+  padding: 10px;
+  border: 1px solid #dfdfdf;
+  outline: none;
+}
